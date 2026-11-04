@@ -1,0 +1,9 @@
+{
+  "verified_design": false,
+  "device": null,
+  "expected_name": "powerscope_mailbox",
+  "expected_map0_addr": null,
+  "expected_map0_size": null,
+  "design_source": null,
+  "note": "Teammate fills from actual SoC address map, DT and /sys/class/uio. No guessed base or /dev/mem. ABI1 result mailbox only."
+}

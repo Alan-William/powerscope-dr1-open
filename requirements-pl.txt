@@ -1,0 +1,2 @@
+# PC-side USB-RS485 capture and local monitor. RTL runner needs an independent Icarus Verilog.
+pyserial>=3.5,<4

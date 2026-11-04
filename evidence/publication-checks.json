@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-04",
+  "platform": "Windows / Python 3.14",
+  "unit_tests": {
+    "command": "python -m unittest discover -s tests -q",
+    "discovered": 91,
+    "passed": 81,
+    "skipped": 10,
+    "failed": 0,
+    "skip_scope": "8 optional native solver tests; 2 Linux fcntl-dependent test modules"
+  },
+  "python_source_files_parsed": 105,
+  "credential_scan_findings": 0,
+  "broken_markdown_links": 0,
+  "photo_gps_metadata_removed": true,
+  "photo_pixel_content_preserved": true,
+  "board_accessed": false,
+  "long_hardware_test_run": false,
+  "pdf_embedded_photo_gps_metadata_removed": true,
+  "pdf_affected_page_renders_identical": true
+}

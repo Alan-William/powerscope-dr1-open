@@ -1,0 +1,6 @@
+{
+  "trunk.onnx": "2fe64b5ee90792e7bfa16d9cc77e2def9d8f156465df07da1360516e9906c698",
+  "head.onnx": "9fce4ffba4a3d1cdd8d980fdd7c9c83ac860c70baa5ba3b4a3df41050a212e24",
+  "best.pt": "7dad956a047d5ccf7773503bfa709145d8ebb434c2649cffaa91c2cd282f46c6",
+  "full.onnx": "5d661be6c84129ef9912a915037f5c027a9a8718b08d8bc37a748eb142221b5f"
+}

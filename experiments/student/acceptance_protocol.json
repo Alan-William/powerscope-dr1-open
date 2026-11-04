@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "host_date": "2026-10-31",
+  "model": "kd-s1",
+  "frozen_before_test_evaluation": true,
+  "trunk_sha256": "75d726be16abbc4fb74238cec880beeb51bef0a984918a81daedb65ce2404a2c",
+  "head_sha256": "b5edd4aa73b92b3dc008387cc27d766f4752b7864d6eea7858fef679f538e267",
+  "dataset_sha256": "a9849da35f01595e201325295ffadd395e49dfa59ba3c1149e77b217ad6a5b2b",
+  "test": {
+    "split": 2,
+    "expected_frames": 4400,
+    "event": 2,
+    "no_training_recalibration_or_model_selection_on_test": true,
+    "accuracy_threshold": null,
+    "quality_policy": "Report accuracy, macro F1, per-class/condition/source metrics and confusion. No competition accuracy threshold supplied; do not invent one or tune against this set.",
+    "deployment_limits_from_existing_gate": {"max_npu_vs_qdq_lsb": 12, "mean_npu_vs_qdq_lsb": 3},
+    "limitations": "Same simulator/controller and operating-condition family; heavily overlapping windows. Event holdout is not physical independence or new device/domain generalization. Historical teacher experiments are not claimed globally blind."
+  },
+  "endurance": {
+    "dataset": "validation",
+    "frames_per_cycle": 1100,
+    "repeat": 66,
+    "total_frames": 72600,
+    "period_ms": 25,
+    "minimum_first_to_last_result_seconds": 1800,
+    "single_run_same_service_and_worker_required": true,
+    "concurrent_http_poll_seconds": 0.3,
+    "resource_sample_seconds": 5,
+    "reject_if": ["inference/application error", "worker/service restart or board reboot", "missing/duplicate/out-of-order results", "nonfinite logits", "output drift for repeated input", "CSV/JSONL disagreement", "HTTP polling failure", "less than 200 MiB free storage"],
+    "latency_policy": "Report full and warm timings, overruns and inter-result gaps; 25 ms is a target, not a hard-real-time guarantee.",
+    "memory_policy": "Report RSS, warm baseline, peak, final and late-run trend; do not claim absence of leaks from 30 minutes alone.",
+    "transport": "preview only; physical AXI and RS485 excluded"
+  }
+}

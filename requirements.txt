@@ -1,0 +1,3 @@
+# PC monitor, protocol tests and numerical utility tests.
+pyserial>=3.5,<4
+numpy>=1.26,<3

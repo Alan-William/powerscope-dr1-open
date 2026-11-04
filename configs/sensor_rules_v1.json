@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "id": "sensor-flat-v1",
+  "input": "normalized_f32_3x500",
+  "thresholds": {
+    "std_max": 0.012274232292156604,
+    "ratio_max": 0.022844357076832238,
+    "other_std_min": 0.12300786825723675,
+    "zero_mean_max": 0.0010753953126577472,
+    "stuck_mean_min": 0.0032261859379732415
+  },
+  "dataset_sha256": "a9849da35f01595e201325295ffadd395e49dfa59ba3c1149e77b217ad6a5b2b",
+  "calibration_splits": [
+    0
+  ],
+  "validation_split": 1,
+  "threshold_recipe": "3x maximum training target std and ratio; half minimum training non-target std; DF mean <=3x max training DF abs mean; SF mean >=9x; middle band abstains",
+  "decision_scope": "One 500-sample window; no claimed multi-window persistence. Other phase activity is a waveform proxy, not a verified machine RUN signal.",
+  "zero_ambiguity": "Near-zero flat output maps to DF by simulation convention; a sensor stuck exactly at zero is not physically distinguishable from dropout here.",
+  "source_sha256": {
+    "experiments/student/calibrate_sensor_rules.py": "fc38c9a2fc33b21a4c34eb525ec0aa22a8dfc351d82a9db6f0219ed8fecc4d41",
+    "ps/sensor_rules.py": "90b50c7dddda9fe332f39932c803ced72a460f3cb458ea2e55c01bd02ee92559"
+  },
+  "test_policy": "E2 previously observed in earlier audit; no E2 threshold selection. Any later E2 result is a retrospective comparison, not new blind validation."
+}

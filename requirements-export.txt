@@ -1,0 +1,4 @@
+# Install in an isolated environment with the existing Ubuntu PyTorch environment.
+onnx==1.19.1
+onnxruntime>=1.18,<2
+numpy>=1.26,<3

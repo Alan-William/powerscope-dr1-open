@@ -1,0 +1,15 @@
+[Unit]
+Description=Enable the routed PowerScope HDMI clock output
+After=local-fs.target
+Before=powerscope-uio.service powerscope-display.service
+RequiresMountsFor=/boot/board
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 -I /usr/local/lib/powerscope/enable_display_clock.py --design-manifest /usr/local/lib/powerscope/display-boot.json
+RemainAfterExit=yes
+TimeoutStartSec=10
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

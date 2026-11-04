@@ -1,0 +1,61 @@
+{
+  "description": "Offline monitor contract vectors, not physical traffic evidence.",
+  "active": {
+    "response_hex": "0103140001000700102694123456780000027200000000de28",
+    "expected": {
+      "status": "ok",
+      "result_valid": true,
+      "sequence": 305419896,
+      "confidence_q": 9876,
+      "inference_us": 626
+    }
+  },
+  "idle": {
+    "response_hex": "01031400010004ffff0000000000070000000000000000449a",
+    "expected": {
+      "status": "idle",
+      "result_valid": false,
+      "label": 65535
+    }
+  },
+  "expired": {
+    "response_hex": "01031400010004ffff0000000000080000000000000005c569",
+    "expected": {
+      "status": "idle",
+      "result_valid": false,
+      "application_error": 5,
+      "label_name": "结果发布已超时"
+    }
+  },
+  "bad_crc": {
+    "response_hex": "0103140001000700102694123456780000027200000000de29",
+    "expected": {
+      "status": "crc_error",
+      "crc_ok": false,
+      "result_valid": false
+    }
+  },
+  "timeout": {
+    "response_hex": "",
+    "expected": {
+      "status": "timeout",
+      "result_valid": false
+    }
+  },
+  "exception": {
+    "response_hex": "0183030131",
+    "expected": {
+      "status": "exception",
+      "crc_ok": true,
+      "result_valid": false
+    }
+  },
+  "unknown_abi": {
+    "response_hex": "01031400020007001026941234567800000272000000009a6c",
+    "expected": {
+      "wire_ok": true,
+      "abi_ok": false,
+      "result_valid": false
+    }
+  }
+}

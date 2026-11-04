@@ -1,0 +1,531 @@
+{
+  "schema": 1,
+  "result_mailbox_abi": 1,
+  "config_sha256": "1088f14c3a498f15239ea4f71435281ff72fecb6d4e1df5a592ee80443fe51dc",
+  "source_run_id": "438e4a4a000048616475ef98",
+  "source_results_sha256": "54e3c223035176179cd5c14974d04cd569e2b0adcd55970f3e73cfd09c4d5f0d",
+  "worker_sha256": "5447657156f63aa80adac8dd3d5c8683accccdf7f52f8e2f7d87f70aab2bf6a2",
+  "selection": "First occurrence of each listed reference class, without filtering predictions",
+  "evidence": "Measured Alnpu plus PS rules; expected wire bytes only. Physical AXI/RS485 NOT tested.",
+  "score_semantics": "Original NPU softmax at final label; not hybrid confidence. May be low or round to zero even with flags=7.",
+  "result_cases": [
+    {
+      "name": "first_heldout_class_0",
+      "dataset_index": 90,
+      "expected": 0,
+      "npu_label": 0,
+      "npu_score": 0.9997856985354332,
+      "final_label": 0,
+      "score": 0.9997856985354332,
+      "diagnosis_source": "npu",
+      "rule": {
+        "matched": false,
+        "candidate_label": null,
+        "phase": null,
+        "kind": null,
+        "reason": "no_low_variation_phase",
+        "features": {
+          "mean": [
+            -0.1284151410148479,
+            -0.03912693016859703,
+            0.16797159481953713
+          ],
+          "std": [
+            0.6786480674297317,
+            0.6452242774476246,
+            0.7024261145818963
+          ]
+        },
+        "changed": false
+      },
+      "packet": {
+        "sequence": 1101,
+        "flags": 7,
+        "label": 0,
+        "confidence_q": 9998,
+        "inference_us": 868,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          0,
+          9998,
+          0,
+          1101,
+          0,
+          868,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            1101
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            16,
+            9998
+          ],
+          [
+            20,
+            868
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "010314000100070000270e0000044d0000036400000000447e"
+      }
+    },
+    {
+      "name": "first_heldout_class_13",
+      "dataset_index": 3860,
+      "expected": 13,
+      "npu_label": 13,
+      "npu_score": 0.9903997103930217,
+      "final_label": 13,
+      "score": 0.9903997103930217,
+      "diagnosis_source": "ps_rule",
+      "rule": {
+        "matched": true,
+        "candidate_label": 13,
+        "phase": "A",
+        "kind": "near_zero_df_candidate",
+        "reason": "near_zero_df_candidate",
+        "features": {
+          "mean": [
+            -6.558714890820739e-05,
+            -0.1672618525568396,
+            0.09798451648605988
+          ],
+          "std": [
+            0.003139704416231226,
+            0.686605522445421,
+            0.6542317690212129
+          ]
+        },
+        "changed": false
+      },
+      "packet": {
+        "sequence": 3701,
+        "flags": 7,
+        "label": 13,
+        "confidence_q": 9904,
+        "inference_us": 630,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          13,
+          9904,
+          0,
+          3701,
+          0,
+          630,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            3701
+          ],
+          [
+            12,
+            851975
+          ],
+          [
+            16,
+            9904
+          ],
+          [
+            20,
+            630
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "01031400010007000d26b000000e7500000276000000008b36"
+      }
+    },
+    {
+      "name": "first_heldout_class_14",
+      "dataset_index": 4150,
+      "expected": 14,
+      "npu_label": 14,
+      "npu_score": 0.9997858042995753,
+      "final_label": 14,
+      "score": 0.9997858042995753,
+      "diagnosis_source": "ps_rule",
+      "rule": {
+        "matched": true,
+        "candidate_label": 14,
+        "phase": "B",
+        "kind": "near_zero_df_candidate",
+        "reason": "near_zero_df_candidate",
+        "features": {
+          "mean": [
+            -0.07714545147400349,
+            -1.31178979336255e-05,
+            0.1701649547875859
+          ],
+          "std": [
+            0.6446088915483797,
+            0.0029299976057685353,
+            0.6867722450905481
+          ]
+        },
+        "changed": false
+      },
+      "packet": {
+        "sequence": 3901,
+        "flags": 7,
+        "label": 14,
+        "confidence_q": 9998,
+        "inference_us": 621,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          14,
+          9998,
+          0,
+          3901,
+          0,
+          621,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            3901
+          ],
+          [
+            12,
+            917511
+          ],
+          [
+            16,
+            9998
+          ],
+          [
+            20,
+            621
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "01031400010007000e270e00000f3d0000026d00000000038d"
+      }
+    },
+    {
+      "name": "first_heldout_class_15",
+      "dataset_index": 4440,
+      "expected": 15,
+      "npu_label": 15,
+      "npu_score": 0.977283202831568,
+      "final_label": 15,
+      "score": 0.977283202831568,
+      "diagnosis_source": "ps_rule",
+      "rule": {
+        "matched": true,
+        "candidate_label": 15,
+        "phase": "C",
+        "kind": "near_zero_df_candidate",
+        "reason": "near_zero_df_candidate",
+        "features": {
+          "mean": [
+            0.1557719192369841,
+            0.0034289721259847285,
+            -6.686317855746893e-05
+          ],
+          "std": [
+            0.6796822735493134,
+            0.6307760090107051,
+            0.003059378207624183
+          ]
+        },
+        "changed": false
+      },
+      "packet": {
+        "sequence": 4101,
+        "flags": 7,
+        "label": 15,
+        "confidence_q": 9773,
+        "inference_us": 610,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          15,
+          9773,
+          0,
+          4101,
+          0,
+          610,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            4101
+          ],
+          [
+            12,
+            983047
+          ],
+          [
+            16,
+            9773
+          ],
+          [
+            20,
+            610
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "01031400010007000f262d000010050000026200000000ee8a"
+      }
+    },
+    {
+      "name": "first_heldout_class_16",
+      "dataset_index": 4730,
+      "expected": 16,
+      "npu_label": 16,
+      "npu_score": 0.9979463855558723,
+      "final_label": 16,
+      "score": 0.9979463855558723,
+      "diagnosis_source": "ps_rule",
+      "rule": {
+        "matched": true,
+        "candidate_label": 16,
+        "phase": "A",
+        "kind": "nonzero_constant_sf",
+        "reason": "nonzero_constant_sf",
+        "features": {
+          "mean": [
+            -0.34376886397600176,
+            -0.163781094558537,
+            0.09284871998697054
+          ],
+          "std": [
+            0.0032645650806991974,
+            0.6505452976048957,
+            0.64131493626993
+          ]
+        },
+        "changed": false
+      },
+      "packet": {
+        "sequence": 4301,
+        "flags": 7,
+        "label": 16,
+        "confidence_q": 9979,
+        "inference_us": 637,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          16,
+          9979,
+          0,
+          4301,
+          0,
+          637,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            4301
+          ],
+          [
+            12,
+            1048583
+          ],
+          [
+            16,
+            9979
+          ],
+          [
+            20,
+            637
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "01031400010007001026fb000010cd0000027d0000000025d2"
+      }
+    },
+    {
+      "name": "first_heldout_class_17",
+      "dataset_index": 5020,
+      "expected": 17,
+      "npu_label": 16,
+      "npu_score": 0.741727956593647,
+      "final_label": 17,
+      "score": 5.351627105563562e-15,
+      "diagnosis_source": "ps_rule",
+      "rule": {
+        "matched": true,
+        "candidate_label": 17,
+        "phase": "B",
+        "kind": "nonzero_constant_sf",
+        "reason": "nonzero_constant_sf",
+        "features": {
+          "mean": [
+            0.0949308317154646,
+            0.6680391377210617,
+            0.1692422536193626
+          ],
+          "std": [
+            0.5639030816542021,
+            0.003493299316635914,
+            0.6038146433655674
+          ]
+        },
+        "changed": true
+      },
+      "packet": {
+        "sequence": 4501,
+        "flags": 7,
+        "label": 17,
+        "confidence_q": 0,
+        "inference_us": 645,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          17,
+          0,
+          0,
+          4501,
+          0,
+          645,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            4501
+          ],
+          [
+            12,
+            1114119
+          ],
+          [
+            16,
+            0
+          ],
+          [
+            20,
+            645
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "0103140001000700110000000011950000028500000000f29c"
+      }
+    },
+    {
+      "name": "first_heldout_class_18",
+      "dataset_index": 5310,
+      "expected": 18,
+      "npu_label": 18,
+      "npu_score": 0.9951061376929468,
+      "final_label": 18,
+      "score": 0.9951061376929468,
+      "diagnosis_source": "ps_rule",
+      "rule": {
+        "matched": true,
+        "candidate_label": 18,
+        "phase": "C",
+        "kind": "nonzero_constant_sf",
+        "reason": "nonzero_constant_sf",
+        "features": {
+          "mean": [
+            0.18390609095757826,
+            -0.0043086148782167585,
+            0.4853167062997818
+          ],
+          "std": [
+            0.6531553507105023,
+            0.6035466811080044,
+            0.0033995673268597554
+          ]
+        },
+        "changed": false
+      },
+      "packet": {
+        "sequence": 4701,
+        "flags": 7,
+        "label": 18,
+        "confidence_q": 9951,
+        "inference_us": 626,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          18,
+          9951,
+          0,
+          4701,
+          0,
+          626,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            4701
+          ],
+          [
+            12,
+            1179655
+          ],
+          [
+            16,
+            9951
+          ],
+          [
+            20,
+            626
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "01031400010007001226df0000125d00000272000000008ffa"
+      }
+    }
+  ]
+}

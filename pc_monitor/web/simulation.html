@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PowerScope · NPC 逆变器在线仿真</title>
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/simulation.css"><script src="/simulation.js" defer></script>
+</head>
+<body>
+<main>
+  <header class="masthead"><a class="brand" href="/"><img src="/icon.svg" alt="" width="38" height="38"><span>PowerScope <small>/ DR1</small></span></a><nav><a class="selected" href="/simulation">在线仿真</a><a href="/">诊断与报文</a></nav><span class="platform">FPGA · NPU · RS485</span></header>
+  <section class="heading"><div><p class="eyebrow">POWER CONVERTER / LIVE SIMULATION</p><h1>NPC 逆变器在线仿真</h1><p>电路持续运行，在故障发生时观察电流与诊断响应。</p></div><span id="run-status" class="status">就绪</span></section>
+  <div id="notice" class="notice" role="alert" hidden></div>
+  <section class="toolbar" aria-label="运行控制">
+    <label>电路工况<select id="condition" aria-label="电路工况"></select></label>
+    <button class="primary" id="start">启动仿真 <span>→</span></button><button id="auto">自动故障流程 · 21 秒</button><button id="stop" disabled>停止</button>
+    <div class="timing"><span>1 μs 求解步长</span><span>10 kHz PWM</span><span>20 kHz 采样</span></div>
+  </section>
+  <section class="metrics" aria-label="实时运行指标">
+    <article><span class="metric-label">仿真运行时间</span><div><strong id="sim-time">0.000</strong><small>s</small></div><p id="pacing">按实际时间推进 · 1×</p></article>
+    <article><span class="metric-label">三相电流有效值</span><div class="rms-values"><span class="phase-a">A <b id="rms-a">—</b></span><span class="phase-b">B <b id="rms-b">—</b></span><span class="phase-c">C <b id="rms-c">—</b></span></div><p>单位 A · 最近一周波</p></article>
+    <article><span class="metric-label">三相负载有功功率</span><div><strong id="power">—</strong><small>W</small></div><p>由电压与负载电流计算</p></article>
+    <article><span class="metric-label">电路求解速度</span><div><strong id="speed">—</strong><small>×</small></div><p id="compute">计算时间 / 25 ms 电流窗口</p></article>
+  </section>
+  <section class="workspace">
+    <article class="card circuit">
+      <div class="card-title"><div><p class="eyebrow">01 / CIRCUIT</p><h2>NPC 桥臂与故障位置</h2></div><span class="chip" id="circuit-vdc">100 V DC</span></div>
+      <p class="diagram-hint">器件位置示意 · 点击开关注入故障，标记随输入状态变化。</p>
+      <div class="bridge-diagram" aria-label="三相桥臂故障位置">
+        <div class="rail positive"><span>+Vdc / 2</span></div>
+        <div id="bridge-legs" class="bridge-legs"></div>
+        <div class="rail negative"><span>−Vdc / 2</span></div>
+        <div class="clamp-note">直流中点钳位 · 各相输出取自 T2 与 T3 之间</div>
+        <div id="current-sensors" class="current-sensors" aria-label="三相输出电流传感器"></div>
+        <div class="filter-path"><span>三相输出</span><i>→</i><b>Lf 2 mH</b><i>→</i><b>Cf 50 μF</b><i>→</i><span id="load-label">R 10 Ω</span></div>
+      </div>
+      <div class="fault-control"><label for="fault">运行中切换故障</label><select id="fault" aria-label="仿真故障类型"></select><div><button id="inject" class="warning" disabled>注入故障</button><button id="recover" disabled>恢复正常</button></div></div>
+      <div id="input-state" class="input-state"><i></i><span>正常运行</span></div>
+    </article>
+    <article class="card scopes">
+      <div class="card-title"><div><p class="eyebrow">02 / WAVEFORMS</p><h2>三相实时波形</h2></div><div class="legend"><span class="phase-a">A 相</span><span class="phase-b">B 相</span><span class="phase-c">C 相</span></div></div>
+      <div class="scope-heading"><b>电流传感器输出 <small>/ A</small></b><label><input type="checkbox" id="show-actual"> 叠加真实电流（虚线）</label></div>
+      <canvas id="current-wave" aria-label="三相传感器电流波形"></canvas>
+      <div class="scope-heading voltage-heading"><b>LC 滤波后相电压 <small>/ V</small></b><span>最近 25 ms</span></div>
+      <canvas id="voltage-wave" aria-label="三相滤波后电压波形"></canvas>
+      <div class="scope-foot"><span id="window-info">三相 × 500 点</span><span>电流单位 A · 传感器输出送诊断端</span></div>
+    </article>
+  </section>
+  <section class="bottom-grid">
+    <article class="card trend-card"><div class="card-title"><div><p class="eyebrow">03 / EVENTS</p><h2>电流变化与故障过程</h2></div><a id="export" aria-disabled="true">导出 CSV ↓</a></div><canvas id="rms-trend" aria-label="三相电流有效值趋势"></canvas><div id="events" class="events"><span>启动后记录运行、故障注入与恢复时刻。</span></div></article>
+    <article class="card board-card"><div class="card-title"><div><p class="eyebrow">04 / FPGA DIAGNOSIS</p><h2>DR1 诊断与 RS485 回传</h2></div><span id="wire-status" class="chip">本机仿真</span></div><p class="link-description">电流窗口 → 网口 → PL / NPU → AXI → RS485</p><div class="board-controls"><select id="port" aria-label="USB-RS485 串口"><option value="">选择 USB-RS485 串口</option></select><button id="ports" title="刷新串口">↻</button><button id="board-start" disabled>接入 DR1</button><button id="board-stop" disabled>停止传输</button></div><div class="board-result"><span>RS485 实际返回类别</span><strong id="diagnosis">连接板端后接收</strong><p id="wire-detail">sfaug-r1 · 纯 NPU 分类</p></div><div class="wire-footer"><span id="correspondence">输入与回传逐窗对应</span><a href="/">查看原始报文 →</a></div></article>
+  </section>
+  <footer><span>NPC 开关电路在线求解 · 三相 LC / RL 负载 · 运行状态连续保留</span><span id="footer-state">PowerScope / 国产 FPGA 故障诊断平台</span></footer>
+</main>
+</body>
+</html>

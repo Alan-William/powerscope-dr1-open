@@ -1,0 +1,15 @@
+[Unit]
+Description=Verify and bind PowerScope DR1 PL windows
+After=local-fs.target systemd-udev-settle.service
+Wants=systemd-udev-settle.service
+RequiresMountsFor=/boot/board
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 -I /usr/local/lib/powerscope/bind_headless_uio.py --output /run/powerscope
+RemainAfterExit=yes
+TimeoutStartSec=30
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

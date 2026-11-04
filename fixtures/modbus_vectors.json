@@ -1,0 +1,52 @@
+{
+  "scope": "synthetic protocol vectors, not measured predictions",
+  "registers": [
+    1,
+    5,
+    21,
+    9876,
+    4660,
+    22136,
+    0,
+    900,
+    0,
+    0
+  ],
+  "cases": [
+    {
+      "name": "read_all",
+      "request_hex": "01030000000ac5cd",
+      "response_hex": "0103140001000500152694123456780000038400000000738f"
+    },
+    {
+      "name": "read_last",
+      "request_hex": "01030008000245c9",
+      "response_hex": "01030400000000fa33"
+    },
+    {
+      "name": "out_of_range",
+      "request_hex": "0103000900021409",
+      "response_hex": "018302c0f1"
+    },
+    {
+      "name": "zero_count",
+      "request_hex": "01030000000045ca",
+      "response_hex": "0183030131"
+    },
+    {
+      "name": "wrong_function",
+      "request_hex": "010600000001480a",
+      "response_hex": "01860183a0"
+    },
+    {
+      "name": "broadcast_read",
+      "request_hex": "00030000000ac41c",
+      "response_hex": null
+    },
+    {
+      "name": "bad_crc",
+      "request_hex": "01030000000ac5cc",
+      "response_hex": null
+    }
+  ]
+}

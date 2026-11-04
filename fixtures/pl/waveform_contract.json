@@ -1,0 +1,27 @@
+{
+  "schema": "powerscope-waveform-mailbox-v1",
+  "evidence": "Protocol/RTL contract fixture; no physical hardware claim",
+  "relative_to": "waveform UIO map (whole peripheral offset +0x1000)",
+  "frame_bytes": 3032,
+  "word_count": 758,
+  "buffer_offset": 4096,
+  "map_bytes": 8192,
+  "registers": {
+    "abi": 0,
+    "status": 4,
+    "length": 8,
+    "commit_token": 12,
+    "return_ack_token": 16,
+    "consume_token": 20,
+    "accepted_count": 24,
+    "rejected_write_count": 28,
+    "abort_partial_input": 32,
+    "words_written": 36
+  },
+  "reset": {"abi": 1, "status": 1, "length": 3032, "commit_token": 0, "return_ack_token": 0, "consume_token": 0, "words_written": 0},
+  "ownership": {"writable": 1, "return_pending": 2, "consume_required": true, "automatic_abort": false},
+  "buffer_write_order": "0..757, WSTRB=15, one frame in flight",
+  "crc_location": "PS; PL returns corrupt CRC bytes unchanged",
+  "golden_frame_source": "fixtures/student/wire_vectors.json:waveform_proposal",
+  "golden_frame_sha256": "6171a0b062ba2b27d43fb8214c77c175fb16ef2f0a15f04f541d01b424e7f1b9"
+}

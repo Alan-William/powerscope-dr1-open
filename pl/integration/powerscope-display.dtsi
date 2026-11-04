@@ -1,0 +1,18 @@
+// Only for build_pl_soc.py --profile display, based on the verified factory DTB.
+// PS framebuffer uses the original VDMA/VTG map; camera transactions are idle.
+/include/ "powerscope-uio.dtsi"
+
+&{/soc/mipicam@80300000} { status = "disabled"; };
+&{/soc/vdma@80200000} { status = "okay"; };
+&{/soc/vdmafb@80100000} { status = "okay"; };
+&{/soc/axi_dynclk@80101000} {
+    // Preserve the integer PLL parameters in the timing-checked bitstream.
+    // enable_display_clock.py opens reg403[0] without touching DRP coefficients.
+    status = "disabled";
+    expclk = <148500000>;
+};
+// Nominal 1080p60; the compiled integer PLL is 50 MHz * 98 / 3 / 11,
+// approximately 148.484848 MHz. Routed STA checks the stricter 148.5 MHz.
+&{/soc/vdmafb@80100000/display-timings/timing1} {
+    clock-frequency = <148500000>;
+};

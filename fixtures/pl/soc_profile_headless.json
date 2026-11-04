@@ -1,0 +1,17 @@
+{
+  "schema": "powerscope-soc-profile-v1",
+  "profile": "headless",
+  "user_scope": "NPU, Ethernet, AXI and RS485 only; camera/HDMI not required (2026-11-01)",
+  "clock_plan": "shared-axi",
+  "retained": ["original PS and hard NPU configuration", "complete soft NPU including resize", "GP1 NPU control and HP0 DDR", "PS Ethernet IP properties", "GP0 PowerScope mailbox/waveform/RS485"],
+  "removed": ["camera MIPI and ISP", "camera write DMA", "video read DMA and framebuffer control", "video timing generator", "HDMI", "unused video PLL/reset domains"],
+  "mailbox": {"base": "0x80400000", "size": "0x1000"},
+  "waveform": {"base": "0x80401000", "size": "0x2000"},
+  "soft_npu": {"base": "0x1f0000000", "size": "0x10000", "irq_concat_input": 15, "dt_irq_spi": 97},
+  "unmapped_gp0": "All accesses outside 0x80400000/64KiB terminate with AXI-Lite DECERR (11), including the former video windows; full 33-bit address decoding is retained",
+  "hp1": "PS clock retained at 150 MHz; all AXI transaction inputs idle and outputs disconnected",
+  "led": {"0": "original NPU-domain heartbeat", "1": "NPU reset released", "2": "GP0 reset released"},
+  "camera": {"reset_n": 0, "clock": 0, "ps_i2c0_pins_retained": true},
+  "device_tree_disable_paths": ["/soc/vdma@80200000", "/soc/mipicam@80300000", "/soc/vdmafb@80100000", "/soc/axi_dynclk@80101000"],
+  "hardware_verified": false
+}

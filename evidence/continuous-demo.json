@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-04",
+  "transport_passed": true,
+  "visible_manual_flow_completed": true,
+  "scope": "Visible MATLAB GUI continuous plant plus real DR1 NPU and RS485; two injected fault kinds and recovery, not a replacement for fixed-dataset accuracy",
+  "model": "sfaug-r1",
+  "sensor_rules": false,
+  "board_backend": "Alnpu",
+  "board_source_revision": "c6c0fe5b987d677cb09ba0f04816d7bacfbdce31+hdmi-20261104-19d1f28316b4",
+  "sent_windows": 2406,
+  "board_processed_and_durable_windows": 2406,
+  "matched_serial_windows": 2406,
+  "serial_counts": {
+    "queries": 3830,
+    "responses": 3830,
+    "valid_packets": 3830,
+    "active_results": 3819,
+    "updates": 2406,
+    "crc_errors": 0,
+    "timeouts": 0,
+    "protocol_errors": 0,
+    "stale_bytes": 0
+  },
+  "source_and_q15_hashes_all_verified": true,
+  "all_registers_verified": true,
+  "physical_pl_and_axi": true,
+  "display_metadata_windows_verified": 2406,
+  "hard_npu_irq_delta": 9624,
+  "soft_npu_irq_delta": 0,
+  "reference_matches": 2406,
+  "reference_mismatches": 0,
+  "reference_confusion": [
+    {
+      "source_label": 0,
+      "npu_label": 0,
+      "windows": 1137
+    },
+    {
+      "source_label": 2,
+      "npu_label": 2,
+      "windows": 181
+    },
+    {
+      "source_label": 21,
+      "npu_label": 21,
+      "windows": 1088
+    }
+  ],
+  "end_to_end_ms": {
+    "min": 82.175,
+    "median": 160.939,
+    "p99_nearest_rank": 217.154,
+    "max": 315.17,
+    "mean": 145.53263715710725
+  },
+  "npu_inference_us": {
+    "min": 592,
+    "median": 678.0,
+    "p99_nearest_rank": 5096,
+    "max": 22565,
+    "mean": 861.0980881130507
+  }
+}

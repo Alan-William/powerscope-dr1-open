@@ -1,0 +1,9 @@
+{
+  "verified_design": false,
+  "device": null,
+  "expected_name": "powerscope_mailbox",
+  "expected_map0_addr": "0x80400000",
+  "expected_map0_size": "0x1000",
+  "design_source": "tools/build_pl_soc.py + pl/rtl/ps_axi_lite_router.v; see docs/hardware-contract.md",
+  "note": "Candidate RTL allocation only. No board verification. Fill device and verify sysfs, exact image and address contract before enabling."
+}

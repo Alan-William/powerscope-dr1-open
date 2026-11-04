@@ -1,0 +1,9 @@
+// Candidate for --profile headless ONLY. Paths verified against the read-only
+// 2026-11-01 backup of this board's system.dtb. Apply to a copy of that full tree.
+// The old video drivers must not probe addresses that now return DECERR.
+/include/ "powerscope-uio.dtsi"
+
+&{/soc/vdma@80200000} { status = "disabled"; };
+&{/soc/mipicam@80300000} { status = "disabled"; };
+&{/soc/vdmafb@80100000} { status = "disabled"; };
+&{/soc/axi_dynclk@80101000} { status = "disabled"; };

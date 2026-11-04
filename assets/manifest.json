@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "model": {
+    "id": "sfaug-r1",
+    "statistics": false,
+    "trunk": {
+      "path": "trunk3.onnx",
+      "sha256": "2fe64b5ee90792e7bfa16d9cc77e2def9d8f156465df07da1360516e9906c698"
+    },
+    "head": {
+      "path": "head.onnx",
+      "sha256": "9fce4ffba4a3d1cdd8d980fdd7c9c83ac860c70baa5ba3b4a3df41050a212e24"
+    },
+    "input_layout": {
+      "channels": 3,
+      "raw_samples": 1500,
+      "quantization": "once per live sample; fixed padding at zero point"
+    }
+  },
+  "datasets": {
+    "demo22": {
+      "path": "demo22.f32",
+      "sha256": "5bef08f61079cecc0ab5bcac8f47ee74332adca7d2cc7cb8f62761bf1882c816",
+      "count": 22,
+      "labels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "dataset_indices": [
+        40,
+        330,
+        620,
+        910,
+        1200,
+        1490,
+        1780,
+        2070,
+        2360,
+        2650,
+        2940,
+        3230,
+        3520,
+        3810,
+        4100,
+        4390,
+        4680,
+        4970,
+        5260,
+        5550,
+        5840,
+        6130
+      ],
+      "title": "22 类演示样本（每类一窗）"
+    }
+  },
+  "dataset_sha256": "a9849da35f01595e201325295ffadd395e49dfa59ba3c1149e77b217ad6a5b2b",
+  "source": "Public demo subset: one existing simulated window per class. Model files match the accepted sfaug-r1 release."
+}

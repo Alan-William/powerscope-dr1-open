@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PowerScope · FPGA 功率变换器故障诊断系统</title>
+  <link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+  <script src="/demo.js" defer></script>
+</head>
+<body>
+<main>
+  <header class="topbar">
+    <div class="brand"><img src="/icon.svg" width="42" height="42" alt=""><div><strong>PowerScope<span> / DR1</span></strong><small>故障诊断系统 · 监控终端</small></div></div>
+    <div class="top-right"><a href="/simulation">在线电路仿真 →</a><span class="tag">DR1 · MODBUS RTU</span><time id="clock">—</time></div>
+  </header>
+  <section class="intro">
+    <div><div class="eyebrow">POWERSCOPE · FPGA 故障诊断平台</div><h1>基于 FPGA 的功率变换器故障诊断系统</h1><p>三相电流输入 · FPGA/NPU 故障识别 · RS485 诊断报文监测</p></div>
+    <div class="connection"><span class="status-pill" id="connection"><i></i><span>等待连接</span></span><small id="session-hint">选择适配器，开始接收</small></div>
+  </section>
+  <section class="controls" aria-label="串口连接">
+    <label class="port-field">USB-RS485 串口<select id="port" aria-label="串口"><option value="">正在读取串口…</option></select></label>
+    <button id="refresh" class="button subtle" title="刷新串口列表">↻ 刷新</button>
+    <label>查询间隔<select id="period" aria-label="查询间隔"><option value="50">50 ms</option><option value="100" selected>100 ms</option><option value="250">250 ms</option><option value="500">500 ms</option><option value="1000">1000 ms</option></select></label>
+    <button id="connect" class="button primary">开始接收 <span>→</span></button>
+    <button id="disconnect" class="button subtle" disabled>断开</button>
+    <div class="wire-config"><b>115200 <span>/</span> 8E1</b><small>从站 01 · 功能 03 · 寄存器 0–9</small></div>
+  </section>
+  <div id="notice" class="notice" role="alert" hidden></div>
+  <section class="demo-panel" aria-label="完整故障演示">
+    <div class="demo-heading"><div><span class="eyebrow">01 / 输入与故障切换</span><h2>三相电流信号源</h2></div><span class="tag">sfaug-r1 · 纯 NPU</span></div>
+    <div class="signal-path" aria-label="演示数据通路"><span><b>电脑波形</b><small>3 × 500 点</small></span><i>→ 网口 →</i><span><b>PL 波形缓存</b><small>Q15 / CRC</small></span><i>→</i><span><b>NPU 推理</b><small>22 类识别</small></span><i>→ AXI →</i><span><b>RS485 回传</b><small>电脑接收报文</small></span></div>
+    <div class="demo-grid">
+      <div class="wave-panel"><div class="wave-title"><strong id="input-label">正常运行</strong><div class="phase-legend"><span>A 相</span><span>B 相</span><span>C 相</span></div></div><canvas id="input-wave" aria-label="本次通过网口发送的三相电流波形"></canvas><div class="wave-foot"><span id="input-meta">20 kHz · 每窗 25 ms · 归一化电流</span><span id="input-count">等待发送</span></div></div>
+      <div class="demo-actions">
+        <div class="demo-start"><button class="button primary" id="demo-start">开始手动演示 →</button><button class="button subtle" id="demo-auto">自动演示 · 21 秒</button></div>
+        <label class="fault-picker">切换输入故障<select id="demo-fault" aria-label="输入故障类型"></select></label>
+        <div class="fault-actions"><button class="button fault-button" id="demo-inject" disabled>注入故障</button><button class="button subtle" id="demo-recover" disabled>恢复正常</button><button class="button subtle" id="demo-stop" disabled>停止</button></div>
+        <p id="demo-status" class="demo-status" role="status">准备波形库…</p>
+        <p class="source-note">已有仿真电流窗口，经网口逐窗发送。切换输入工况后，由板端独立识别；界面下方显示 RS485 实际接收的结果。</p>
+      </div>
+    </div>
+    <div class="demo-progress" id="demo-steps" aria-label="自动演示步骤"></div>
+    <div class="demo-evidence"><span id="demo-match">发送 0 窗 / RS485 对应 0 窗</span><span id="demo-latency">发送至串口响应 —</span><a id="demo-export" aria-disabled="true">导出演示记录 ↓</a></div>
+    <div id="demo-events" class="demo-events" aria-label="诊断状态变化"><span>开始后记录正常、故障与恢复的响应。</span></div>
+  </section>
+  <section class="summary" aria-label="接收概要">
+    <article class="diagnosis" id="diagnosis-card"><div class="caption"><span id="diagnosis-caption">串口接收的诊断结果</span><span class="badge" id="result-kind">等待报文</span></div><h2 id="diagnosis">尚未接收</h2><div class="result-meta"><span id="result-code">—</span><span id="result-sequence">序号 —</span><span id="result-score">模型分数 —</span></div></article>
+    <article><div class="caption">有效报文 / 查询次数</div><div class="metric"><b id="valid-count">0</b><span>/ <span id="query-count">0</span></span></div><p id="update-count">0 次诊断结果更新</p></article>
+    <article><div class="caption">最近一次请求往返</div><div class="metric"><b id="roundtrip">—</b><span>ms</span><svg class="sparkline" viewBox="0 0 100 32" aria-label="最近请求耗时趋势"><polyline id="rtt-line" points=""/></svg></div><p id="npu-time">报文中的 NPU 耗时 —</p></article>
+    <article><div class="caption">通信异常</div><div class="health"><div><b id="crc-count">0</b><span>CRC 错误</span></div><div><b id="timeout-count">0</b><span>超时</span></div></div><p id="protocol-count">协议异常 0 · 遗留字节 0</p></article>
+  </section>
+  <section class="panels">
+    <article class="traffic">
+      <div class="panel-title"><div><h3>报文流 <span class="live-dot" id="traffic-dot"></span></h3><p>TX 电脑查询 / RX 板端应答</p></div><div class="export-actions"><a id="export-csv" aria-disabled="true">CSV ↓</a><a id="export-jsonl" aria-disabled="true">JSONL ↓</a></div></div>
+      <div class="log-toolbar"><div class="segmented" role="group" aria-label="报文筛选"><button class="chosen" data-filter="all">全部</button><button data-filter="rx">仅接收</button><button data-filter="errors">异常</button></div><div class="log-actions"><label><input id="follow" type="checkbox" checked> 跟随最新</label><button id="clear" class="text-button">清空显示</button></div></div>
+      <div class="log-head"><span>电脑时间</span><span>方向</span><span>原始报文 / HEX</span><span>校验</span></div>
+      <div id="packet-log" class="packet-log" role="log" aria-label="串口报文" tabindex="0">
+        <div class="empty-state"><div class="empty-symbol">⎓</div><h4>等待第一帧报文</h4><p>连接 USB-RS485 后，点击“开始接收”。<br>电脑将周期读取 FPGA 的 10 个诊断寄存器。</p><code>01 03 00 00 00 0A C5 CD</code></div>
+      </div>
+      <div class="log-footer"><span id="log-count">当前显示 0 条事务</span><span>点击报文查看解析 →</span></div>
+    </article>
+    <article class="inspector">
+      <div class="panel-title"><div><h3>报文解析</h3><p id="detail-subtitle">选中一条 RX 应答</p></div><span id="detail-crc" class="badge">—</span></div>
+      <div id="frame-bytes" class="frame-bytes"><span class="placeholder">收到应答后，在这里逐字段查看原始字节。</span></div>
+      <div class="byte-legend"><span class="addr">地址</span><span class="func">功能</span><span class="length">长度</span><span class="payload">寄存器</span><span class="crc">CRC</span></div>
+      <div id="detail-note" class="detail-note">CRC 低字节在前，寄存器按大端序解析。</div>
+      <dl class="decoded-fields"><div><dt>帧序号</dt><dd id="detail-sequence">—</dd></div><div><dt>故障类型</dt><dd id="detail-label">—</dd></div><div><dt>模型分数</dt><dd id="detail-score">—</dd></div><div><dt>NPU 推理</dt><dd id="detail-inference">—</dd></div></dl>
+      <div class="flags"><span id="flag-valid">VALID —</span><span id="flag-npu">NPU —</span><span id="flag-sim">SIM —</span></div>
+      <div class="register-title"><span>保持寄存器</span><span>十六进制 / 十进制</span></div>
+      <table class="registers"><thead><tr><th>地址</th><th>字段</th><th>HEX</th><th>DEC</th></tr></thead><tbody id="registers"></tbody></table>
+      <p class="score-note">模型分数为报文中携带的分类分数。</p>
+    </article>
+  </section>
+  <footer><span><i class="footer-dot"></i>本机串口连接 · 原始记录自动保存</span><span id="saved-session">尚未开始会话</span><button id="shutdown" class="text-button">退出程序</button></footer>
+</main>
+</body>
+</html>

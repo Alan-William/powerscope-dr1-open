@@ -1,0 +1,16 @@
+// Candidate only. Include with the exact NPU-preserving SoC built by build_pl_soc.py.
+// Do not apply to the vendor bitstream. Requires a working generic UIO driver binding.
+&{/soc} {
+    powerscope_mailbox: powerscope-mailbox@80400000 {
+        compatible = "generic-uio";
+        linux,uio-name = "powerscope_mailbox";
+        reg = <0x0 0x80400000 0x0 0x1000>;
+        status = "okay";
+    };
+    powerscope_waveform: powerscope-waveform@80401000 {
+        compatible = "generic-uio";
+        linux,uio-name = "powerscope_waveform";
+        reg = <0x0 0x80401000 0x0 0x2000>;
+        status = "okay";
+    };
+};

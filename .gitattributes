@@ -1,0 +1,12 @@
+* text=auto eol=lf
+*.bin -text
+*.npz -text
+*.onnx -text
+
+# Preserve exact bytes of hash-bound model/protocol manifests.
+*.json -text
+*.pt -text
+*.f32 -text
+*.slx -text
+*.pdf -text
+*.jpg -text

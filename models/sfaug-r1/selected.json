@@ -1,0 +1,15 @@
+{
+  "arm": "aug_ce",
+  "seed": 0,
+  "directory": "aug_ce-s0",
+  "selection_uses_test": false,
+  "protocol_sha256": "5802f77ea87d5396cc71ab42b8b0ad5fc36898b2da1830c0fc09baa1fc8c6b98",
+  "artifacts_sha256": {
+    "best.pt": "7dad956a047d5ccf7773503bfa709145d8ebb434c2649cffaa91c2cd282f46c6",
+    "full.onnx": "5d661be6c84129ef9912a915037f5c027a9a8718b08d8bc37a748eb142221b5f",
+    "head.onnx": "9fce4ffba4a3d1cdd8d980fdd7c9c83ac860c70baa5ba3b4a3df41050a212e24",
+    "trunk.onnx": "2fe64b5ee90792e7bfa16d9cc77e2def9d8f156465df07da1360516e9906c698",
+    "validation-predictions.npz": "0cb13b77d7137db64e3b73aea84e34a1019a3f2431baf27ec19afee015c608fe"
+  },
+  "smoke": false
+}

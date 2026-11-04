@@ -1,0 +1,1295 @@
+{
+  "schema": 1,
+  "result_mailbox_abi": 1,
+  "model": "kd-s1",
+  "statistics": false,
+  "source_results_sha256": "04a34da07ce21c1caa89cbda84c79a8da44b75d9079c79290bc43e10d505fecc",
+  "evidence": "Measured NPU classifications; expected wire bytes only. Physical AXI/RS485 NOT tested.",
+  "result_cases": [
+    {
+      "name": "first_validation_class_0",
+      "dataset_index": 40,
+      "expected": 0,
+      "actual_npu_label": 0,
+      "packet": {
+        "sequence": 1,
+        "flags": 7,
+        "label": 0,
+        "confidence_q": 10000,
+        "inference_us": 990,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          0,
+          10000,
+          0,
+          1,
+          0,
+          990,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            1
+          ],
+          [
+            12,
+            7
+          ],
+          [
+            16,
+            10000
+          ],
+          [
+            20,
+            990
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "010314000100070000271000000001000003de0000000090ad"
+      }
+    },
+    {
+      "name": "first_validation_class_1",
+      "dataset_index": 330,
+      "expected": 1,
+      "actual_npu_label": 1,
+      "packet": {
+        "sequence": 51,
+        "flags": 7,
+        "label": 1,
+        "confidence_q": 9999,
+        "inference_us": 713,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          1,
+          9999,
+          0,
+          51,
+          0,
+          713,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            51
+          ],
+          [
+            12,
+            65543
+          ],
+          [
+            16,
+            9999
+          ],
+          [
+            20,
+            713
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "010314000100070001270f00000033000002c9000000004381"
+      }
+    },
+    {
+      "name": "first_validation_class_2",
+      "dataset_index": 620,
+      "expected": 2,
+      "actual_npu_label": 2,
+      "packet": {
+        "sequence": 101,
+        "flags": 7,
+        "label": 2,
+        "confidence_q": 10000,
+        "inference_us": 635,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          2,
+          10000,
+          0,
+          101,
+          0,
+          635,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            101
+          ],
+          [
+            12,
+            131079
+          ],
+          [
+            16,
+            10000
+          ],
+          [
+            20,
+            635
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "0103140001000700022710000000650000027b00000000c5a6"
+      }
+    },
+    {
+      "name": "first_validation_class_3",
+      "dataset_index": 910,
+      "expected": 3,
+      "actual_npu_label": 3,
+      "packet": {
+        "sequence": 151,
+        "flags": 7,
+        "label": 3,
+        "confidence_q": 10000,
+        "inference_us": 625,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          3,
+          10000,
+          0,
+          151,
+          0,
+          625,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            151
+          ],
+          [
+            12,
+            196615
+          ],
+          [
+            16,
+            10000
+          ],
+          [
+            20,
+            625
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "010314000100070003271000000097000002710000000081c3"
+      }
+    },
+    {
+      "name": "first_validation_class_4",
+      "dataset_index": 1200,
+      "expected": 4,
+      "actual_npu_label": 4,
+      "packet": {
+        "sequence": 201,
+        "flags": 7,
+        "label": 4,
+        "confidence_q": 9997,
+        "inference_us": 641,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          4,
+          9997,
+          0,
+          201,
+          0,
+          641,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            201
+          ],
+          [
+            12,
+            262151
+          ],
+          [
+            16,
+            9997
+          ],
+          [
+            20,
+            641
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "010314000100070004270d000000c900000281000000001b6a"
+      }
+    },
+    {
+      "name": "first_validation_class_5",
+      "dataset_index": 1490,
+      "expected": 5,
+      "actual_npu_label": 5,
+      "packet": {
+        "sequence": 251,
+        "flags": 7,
+        "label": 5,
+        "confidence_q": 9998,
+        "inference_us": 641,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          5,
+          9998,
+          0,
+          251,
+          0,
+          641,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            251
+          ],
+          [
+            12,
+            327687
+          ],
+          [
+            16,
+            9998
+          ],
+          [
+            20,
+            641
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "010314000100070005270e000000fb000002810000000092c8"
+      }
+    },
+    {
+      "name": "first_validation_class_6",
+      "dataset_index": 1780,
+      "expected": 6,
+      "actual_npu_label": 6,
+      "packet": {
+        "sequence": 301,
+        "flags": 7,
+        "label": 6,
+        "confidence_q": 9999,
+        "inference_us": 657,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          6,
+          9999,
+          0,
+          301,
+          0,
+          657,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            301
+          ],
+          [
+            12,
+            393223
+          ],
+          [
+            16,
+            9999
+          ],
+          [
+            20,
+            657
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "010314000100070006270f0000012d0000029100000000f52b"
+      }
+    },
+    {
+      "name": "first_validation_class_7",
+      "dataset_index": 2070,
+      "expected": 7,
+      "actual_npu_label": 7,
+      "packet": {
+        "sequence": 351,
+        "flags": 7,
+        "label": 7,
+        "confidence_q": 9998,
+        "inference_us": 618,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          7,
+          9998,
+          0,
+          351,
+          0,
+          618,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            351
+          ],
+          [
+            12,
+            458759
+          ],
+          [
+            16,
+            9998
+          ],
+          [
+            20,
+            618
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "010314000100070007270e0000015f0000026a00000000afdc"
+      }
+    },
+    {
+      "name": "first_validation_class_8",
+      "dataset_index": 2360,
+      "expected": 8,
+      "actual_npu_label": 8,
+      "packet": {
+        "sequence": 401,
+        "flags": 7,
+        "label": 8,
+        "confidence_q": 9996,
+        "inference_us": 699,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          8,
+          9996,
+          0,
+          401,
+          0,
+          699,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            401
+          ],
+          [
+            12,
+            524295
+          ],
+          [
+            16,
+            9996
+          ],
+          [
+            20,
+            699
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "010314000100070008270c00000191000002bb0000000007ed"
+      }
+    },
+    {
+      "name": "first_validation_class_9",
+      "dataset_index": 2650,
+      "expected": 9,
+      "actual_npu_label": 9,
+      "packet": {
+        "sequence": 451,
+        "flags": 7,
+        "label": 9,
+        "confidence_q": 9999,
+        "inference_us": 627,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          9,
+          9999,
+          0,
+          451,
+          0,
+          627,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            451
+          ],
+          [
+            12,
+            589831
+          ],
+          [
+            16,
+            9999
+          ],
+          [
+            20,
+            627
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "010314000100070009270f000001c30000027300000000c79d"
+      }
+    },
+    {
+      "name": "first_validation_class_10",
+      "dataset_index": 2940,
+      "expected": 10,
+      "actual_npu_label": 10,
+      "packet": {
+        "sequence": 501,
+        "flags": 7,
+        "label": 10,
+        "confidence_q": 10000,
+        "inference_us": 620,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          10,
+          10000,
+          0,
+          501,
+          0,
+          620,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            501
+          ],
+          [
+            12,
+            655367
+          ],
+          [
+            16,
+            10000
+          ],
+          [
+            20,
+            620
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "01031400010007000a2710000001f50000026c000000004460"
+      }
+    },
+    {
+      "name": "first_validation_class_11",
+      "dataset_index": 3230,
+      "expected": 11,
+      "actual_npu_label": 11,
+      "packet": {
+        "sequence": 551,
+        "flags": 7,
+        "label": 11,
+        "confidence_q": 10000,
+        "inference_us": 678,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          11,
+          10000,
+          0,
+          551,
+          0,
+          678,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            551
+          ],
+          [
+            12,
+            720903
+          ],
+          [
+            16,
+            10000
+          ],
+          [
+            20,
+            678
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "01031400010007000b271000000227000002a60000000069da"
+      }
+    },
+    {
+      "name": "first_validation_class_12",
+      "dataset_index": 3520,
+      "expected": 12,
+      "actual_npu_label": 12,
+      "packet": {
+        "sequence": 601,
+        "flags": 7,
+        "label": 12,
+        "confidence_q": 9998,
+        "inference_us": 685,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          12,
+          9998,
+          0,
+          601,
+          0,
+          685,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            601
+          ],
+          [
+            12,
+            786439
+          ],
+          [
+            16,
+            9998
+          ],
+          [
+            20,
+            685
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "01031400010007000c270e00000259000002ad000000008aa5"
+      }
+    },
+    {
+      "name": "first_validation_class_13",
+      "dataset_index": 3810,
+      "expected": 13,
+      "actual_npu_label": 13,
+      "packet": {
+        "sequence": 651,
+        "flags": 7,
+        "label": 13,
+        "confidence_q": 9773,
+        "inference_us": 793,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          13,
+          9773,
+          0,
+          651,
+          0,
+          793,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            651
+          ],
+          [
+            12,
+            851975
+          ],
+          [
+            16,
+            9773
+          ],
+          [
+            20,
+            793
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "01031400010007000d262d0000028b000003190000000004a9"
+      }
+    },
+    {
+      "name": "first_validation_class_14",
+      "dataset_index": 4100,
+      "expected": 14,
+      "actual_npu_label": 14,
+      "packet": {
+        "sequence": 701,
+        "flags": 7,
+        "label": 14,
+        "confidence_q": 9999,
+        "inference_us": 690,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          14,
+          9999,
+          0,
+          701,
+          0,
+          690,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            701
+          ],
+          [
+            12,
+            917511
+          ],
+          [
+            16,
+            9999
+          ],
+          [
+            20,
+            690
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "01031400010007000e270f000002bd000002b20000000064e3"
+      }
+    },
+    {
+      "name": "first_validation_class_15",
+      "dataset_index": 4390,
+      "expected": 15,
+      "actual_npu_label": 15,
+      "packet": {
+        "sequence": 751,
+        "flags": 7,
+        "label": 15,
+        "confidence_q": 9460,
+        "inference_us": 626,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          15,
+          9460,
+          0,
+          751,
+          0,
+          626,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            751
+          ],
+          [
+            12,
+            983047
+          ],
+          [
+            16,
+            9460
+          ],
+          [
+            20,
+            626
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "01031400010007000f24f4000002ef000002720000000019e8"
+      }
+    },
+    {
+      "name": "first_validation_class_16",
+      "dataset_index": 4680,
+      "expected": 16,
+      "actual_npu_label": 16,
+      "packet": {
+        "sequence": 801,
+        "flags": 7,
+        "label": 16,
+        "confidence_q": 9993,
+        "inference_us": 769,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          16,
+          9993,
+          0,
+          801,
+          0,
+          769,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            801
+          ],
+          [
+            12,
+            1048583
+          ],
+          [
+            16,
+            9993
+          ],
+          [
+            20,
+            769
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "01031400010007001027090000032100000301000000005fe5"
+      }
+    },
+    {
+      "name": "first_validation_class_17",
+      "dataset_index": 4970,
+      "expected": 17,
+      "actual_npu_label": 17,
+      "packet": {
+        "sequence": 851,
+        "flags": 7,
+        "label": 17,
+        "confidence_q": 9999,
+        "inference_us": 616,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          17,
+          9999,
+          0,
+          851,
+          0,
+          616,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            851
+          ],
+          [
+            12,
+            1114119
+          ],
+          [
+            16,
+            9999
+          ],
+          [
+            20,
+            616
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "010314000100070011270f000003530000026800000000b659"
+      }
+    },
+    {
+      "name": "first_validation_class_18",
+      "dataset_index": 5260,
+      "expected": 18,
+      "actual_npu_label": 18,
+      "packet": {
+        "sequence": 901,
+        "flags": 7,
+        "label": 18,
+        "confidence_q": 9995,
+        "inference_us": 698,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          18,
+          9995,
+          0,
+          901,
+          0,
+          698,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            901
+          ],
+          [
+            12,
+            1179655
+          ],
+          [
+            16,
+            9995
+          ],
+          [
+            20,
+            698
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "010314000100070012270b00000385000002ba00000000f5ab"
+      }
+    },
+    {
+      "name": "first_validation_class_19",
+      "dataset_index": 5550,
+      "expected": 19,
+      "actual_npu_label": 19,
+      "packet": {
+        "sequence": 951,
+        "flags": 7,
+        "label": 19,
+        "confidence_q": 9996,
+        "inference_us": 680,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          19,
+          9996,
+          0,
+          951,
+          0,
+          680,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            951
+          ],
+          [
+            12,
+            1245191
+          ],
+          [
+            16,
+            9996
+          ],
+          [
+            20,
+            680
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "010314000100070013270c000003b7000002a800000000ca8e"
+      }
+    },
+    {
+      "name": "first_validation_class_20",
+      "dataset_index": 5840,
+      "expected": 20,
+      "actual_npu_label": 20,
+      "packet": {
+        "sequence": 1001,
+        "flags": 7,
+        "label": 20,
+        "confidence_q": 10000,
+        "inference_us": 644,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          20,
+          10000,
+          0,
+          1001,
+          0,
+          644,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            1001
+          ],
+          [
+            12,
+            1310727
+          ],
+          [
+            16,
+            10000
+          ],
+          [
+            20,
+            644
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "0103140001000700142710000003e900000284000000008375"
+      }
+    },
+    {
+      "name": "first_validation_class_21",
+      "dataset_index": 6130,
+      "expected": 21,
+      "actual_npu_label": 21,
+      "packet": {
+        "sequence": 1051,
+        "flags": 7,
+        "label": 21,
+        "confidence_q": 10000,
+        "inference_us": 742,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          21,
+          10000,
+          0,
+          1051,
+          0,
+          742,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            1051
+          ],
+          [
+            12,
+            1376263
+          ],
+          [
+            16,
+            10000
+          ],
+          [
+            20,
+            742
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "01031400010007001527100000041b000002e6000000001703"
+      }
+    },
+    {
+      "name": "idle",
+      "packet": {
+        "sequence": 0,
+        "flags": 4,
+        "label": 65535,
+        "confidence_q": 0,
+        "inference_us": 0,
+        "error": 0,
+        "registers": [
+          1,
+          4,
+          65535,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            0
+          ],
+          [
+            12,
+            4294901764
+          ],
+          [
+            16,
+            0
+          ],
+          [
+            20,
+            0
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "01031400010004ffff000000000000000000000000000062aa"
+      }
+    },
+    {
+      "name": "npu_error",
+      "packet": {
+        "sequence": 7,
+        "flags": 4,
+        "label": 65535,
+        "confidence_q": 0,
+        "inference_us": 0,
+        "error": 1,
+        "registers": [
+          1,
+          4,
+          65535,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0,
+          1
+        ],
+        "pending_writes": [
+          [
+            8,
+            7
+          ],
+          [
+            12,
+            4294901764
+          ],
+          [
+            16,
+            0
+          ],
+          [
+            20,
+            0
+          ],
+          [
+            24,
+            1
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "01031400010004ffff0000000000070000000000000001855a"
+      }
+    },
+    {
+      "name": "sequence_uint32_max",
+      "packet": {
+        "sequence": 4294967295,
+        "flags": 7,
+        "label": 21,
+        "confidence_q": 10000,
+        "inference_us": 4294967295,
+        "error": 0,
+        "registers": [
+          1,
+          7,
+          21,
+          10000,
+          65535,
+          65535,
+          65535,
+          65535,
+          0,
+          0
+        ],
+        "pending_writes": [
+          [
+            8,
+            4294967295
+          ],
+          [
+            12,
+            1376263
+          ],
+          [
+            16,
+            10000
+          ],
+          [
+            20,
+            4294967295
+          ],
+          [
+            24,
+            0
+          ]
+        ],
+        "rtu_request_hex": "01030000000ac5cd",
+        "rtu_expected_response_hex": "0103140001000700152710ffffffffffffffff00000000b407"
+      }
+    }
+  ],
+  "request_cases": [
+    {
+      "name": "valid_read",
+      "request_hex": "01030000000ac5cd",
+      "response_hex": "010314000100070000271000000001000003de0000000090ad"
+    },
+    {
+      "name": "bad_crc",
+      "request_hex": "01030000000ac5cc",
+      "response_hex": null
+    },
+    {
+      "name": "wrong_slave",
+      "request_hex": "02030000000ac5fe",
+      "response_hex": null
+    },
+    {
+      "name": "broadcast_read",
+      "request_hex": "00030000000ac41c",
+      "response_hex": null
+    },
+    {
+      "name": "zero_count",
+      "request_hex": "01030000000045ca",
+      "response_hex": "0183030131"
+    },
+    {
+      "name": "out_of_bounds",
+      "request_hex": "0103000900021409",
+      "response_hex": "018302c0f1"
+    },
+    {
+      "name": "unsupported_function",
+      "request_hex": "01040000000a700d",
+      "response_hex": "01840182c0"
+    }
+  ],
+  "waveform_proposal": {
+    "status": "codec only; hardware map and transport not integrated",
+    "pattern": "[0,1,-1,0.5,-0.5] repeated 300 times",
+    "bytes": 3032,
+    "sha256": "6171a0b062ba2b27d43fb8214c77c175fb16ef2f0a15f04f541d01b424e7f1b9",
+    "hex": "50535731010000007856341201000000204e00000300f401b80b000047ea9d540000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c00000ff7f0180004000c0"
+  }
+}

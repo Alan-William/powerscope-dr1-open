@@ -1,0 +1,25 @@
+[Unit]
+Description=PowerScope DR1 NPU replay and web interface
+Requires=powerscope-uio.service
+After=powerscope-uio.service network.target
+RequiresMountsFor=/opt/powerscope /home/uisrc
+StartLimitIntervalSec=60
+StartLimitBurst=3
+
+[Service]
+Type=simple
+User=uisrc
+Group=uisrc
+WorkingDirectory=/opt/powerscope/current
+Environment=PYTHONNOUSERSITE=1
+ExecStart=/bin/sh /opt/powerscope/current/board/deploy/run_production.sh
+Restart=on-failure
+RestartSec=5
+KillSignal=SIGINT
+KillMode=mixed
+TimeoutStopSec=35
+NoNewPrivileges=true
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+{
+  "verified_design": false,
+  "device": null,
+  "expected_name": "powerscope_waveform",
+  "expected_map0_addr": "0x80401000",
+  "expected_map0_size": "0x2000",
+  "design_source": "tools/build_pl_soc.py + pl/rtl/ps_axi_lite_router.v; see docs/hardware-contract.md",
+  "note": "Candidate only. Separate waveform UIO mapping: control at +0, buffer at +0x1000. No board writes authorized by this file."
+}

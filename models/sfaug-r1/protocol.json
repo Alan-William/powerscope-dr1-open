@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "smoke": false,
+  "dataset_sha256": "a9849da35f01595e201325295ffadd395e49dfa59ba3c1149e77b217ad6a5b2b",
+  "teacher_onnx_sha256": "6566a8ea25f6817a5f9eb0202971c328eafe916c14bcfa6ad969a57eb98652c0",
+  "train_indices_sha256": "a53b3bcd947f9ba4ba90005ebc9a5650185d76a74a5064daad49cf6a0df28fc1",
+  "validation_indices_sha256": "d5be4ca585671f686909c11159aaf00c111128a1e91dbf5f9df068d2dd6e956a",
+  "counts": {
+    "train": 880,
+    "clean_validation": 1100,
+    "synthetic_sf_validation": 1800
+  },
+  "arms": [
+    "ce",
+    "aug_ce",
+    "aug_teacher_correct_kd"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "epochs": 120,
+  "updates_per_epoch": 7,
+  "batch_size": 128,
+  "augmentation": {
+    "target_labels": [
+      16,
+      17,
+      18
+    ],
+    "probability": 0.75,
+    "level_range": [
+      -1,
+      1
+    ],
+    "validation_levels": [
+      -0.9,
+      -0.6,
+      -0.3,
+      -0.1,
+      -0.03,
+      -0.01,
+      0.01,
+      0.03,
+      0.1,
+      0.3,
+      0.6,
+      0.9
+    ],
+    "residual_noise": "retained then shared normalization",
+    "scope": "Observation augmentation only. Other-phase controller response not re-simulated. Synthetic derivatives are not new independent events."
+  },
+  "statistics": false,
+  "architecture": "unchanged 26,486-parameter deployable student",
+  "optimizer": "AdamW lr=.003 weight_decay=.0001; cosine eta_min=.00003",
+  "distillation": "T=2; 0.5 CE +0.5 KL when frozen teacher top1 matches training label, else CE",
+  "selection": "FP32 checkpoints and QDQ candidates: maximize min(clean-val accuracy, synthetic-SF accuracy), then clean macro-F1, clean accuracy, then negative clean CE; exact ties keep first fixed arm/seed",
+  "calibration": "original plus fixed-level augmented training only, same pool for all arms",
+  "test_policy": "No E2 fitting, calibration, checkpoint or candidate selection. E2 previously examined; any later result is retrospective, not new blind evidence.",
+  "execution": "Local Windows CUDA, per user's cancellation of Ubuntu/simulation work",
+  "runtime": {
+    "torch": "2.10.0+cu130",
+    "numpy": "2.3.5",
+    "ort": "1.28.0",
+    "device": "NVIDIA GeForce RTX 5060 Laptop GPU"
+  },
+  "source_sha256": {
+    "train_sensor_augmentation.py": "ca2995298dad5f8b777da5eae0a7a978095feff944ba780e99ac1e629a986950",
+    "augment_sensor.py": "a72b88fab4ac7e40e46278cc431d1cf7e28d6570d5b9aff5d8cee89e6049923b",
+    "network.py": "74633c1e824a391793f440d8cc4a9fe07a6a13684ccc62b66006d0ee61047ad8",
+    "export_qdq.py": "e586f9bd67f65c2fa123c92c8c43559f5c9dac267b0c300290e2817be5bead6a",
+    "analyze_acceptance.py": "522eaab982fe4786bdcf1a61df8479d9fe72de5ee1749a512f2b739f26721de6"
+  }
+}

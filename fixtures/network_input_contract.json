@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "format": "3x500-f32le-normalized",
+  "bytes": 6000,
+  "sample_order": ["A[0:500]", "B[0:500]", "C[0:500]"],
+  "request_fields": ["run_id", "input_id", "samples_b64", "sha256"],
+  "optional_request_fields": ["display"],
+  "display": {
+    "version": 1,
+    "fields": ["scale_a", "sample_rate_hz", "sim_time_s"],
+    "sample_rate_hz": 20000,
+    "purpose": "Display only: multiply the returned normalized samples by scale_a; no inference effect or class labels",
+    "example": {"scale_a": 8.0, "sample_rate_hz": 20000, "sim_time_s": 1.025}
+  },
+  "forbidden_reference_fields": ["label", "expected"],
+  "input_id_first": 1,
+  "outstanding_windows": 1,
+  "idle_timeout_seconds": 5,
+  "unit_vector": {
+    "description": "Synthetic unit vector only; not hardware evidence or a diagnostic sample",
+    "all_values": 0.25,
+    "sha256": "7d217fcbd7ada16d369592c88d77ee1e4417bd6b6c7cc1d0d64fc8b1aa6289c0"
+  }
+}

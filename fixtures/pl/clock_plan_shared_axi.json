@@ -1,0 +1,36 @@
+{
+  "schema": "powerscope-clock-plan-v1",
+  "plan": "shared-axi",
+  "profiles": {"default": "headless", "full": "Camera/HDMI comparison profile; see separate timing failure report", "headless": "NPU/GP0 only; HP1 clock retained but transactions idle; five active PLL/PS models checked"},
+  "evidence": "Source and timing-analysis contract; not physical clock or NPU acceptance",
+  "vendor_archive_sha256": "f754663eded613cf15ac2ceb241ac91533792d360c4fdb49ba4105d887ba70ae",
+  "reference_clock": {"source": "PS p2f_clk0", "hz": 50000000},
+  "pll": {
+    "module": "design_0_PLL_0",
+    "instance": "design_0_inst/design_0_pll_75m_Inst",
+    "existing_parameters": {
+      "REFCLK_DIV": 2,
+      "FBCLK_DIV": 3,
+      "CLKC0_DIV": 14,
+      "CLKC1_DIV": 7,
+      "CLKC0_FPHASE": 0,
+      "CLKC1_FPHASE": 0,
+      "CLKC0_CPHASE": 13,
+      "CLKC1_CPHASE": 6,
+      "CLKC0_DUTY50": "ENABLE",
+      "CLKC1_DUTY50": "ENABLE"
+    },
+    "c0": {"hz": 75000000, "phase_degrees": 0, "buffer": "existing feedback BUFG"},
+    "c1": {"hz": 150000000, "phase_degrees": 0, "buffer": "added DR1_LOGIC_BUFG powerscope_clk150_buf"}
+  },
+  "consumers": {
+    "GP0_and_PowerScope_peripheral": "c0",
+    "GP1_and_NPU_control": "c1",
+    "HP0_and_NPU_DDR": "c1",
+    "HP1_clock": "c1; no active transactions in headless",
+    "existing_150MHz_video_domain_full_profile_only": "c1"
+  },
+  "reset": "Existing per-domain reset synchronizers use the shared PLL lock; lock loss affects NPU and GP0, plus video only in full profile",
+  "constraints": "derive_clocks; analyze paths between shared 75/150MHz clocks; do not transfer old clock-group exclusions onto the merged domain",
+  "acceptance_requires": ["all active PLL/PS timing clock models at the expected frequencies (five headless, six full)", "routed setup and hold review", "coverage and CDC review", "physical NPU/AXI/RS485 acceptance"]
+}
